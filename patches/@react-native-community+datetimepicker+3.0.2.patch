@@ -1,0 +1,21 @@
+diff --git a/node_modules/@react-native-community/datetimepicker/src/picker.ios.js b/node_modules/@react-native-community/datetimepicker/src/picker.ios.js
+index 9b1dcb4..e1ad33b 100644
+--- a/node_modules/@react-native-community/datetimepicker/src/picker.ios.js
++++ b/node_modules/@react-native-community/datetimepicker/src/picker.ios.js
+@@ -9,8 +9,12 @@
+  */
+ import {requireNativeComponent} from 'react-native';
+ 
+-import type {RCTDateTimePickerNative} from './types';
++// Vérifiez si le composant est déjà enregistré
++let RNDateTimePicker = null;
++try {
++  RNDateTimePicker = requireNativeComponent('RNDateTimePicker');
++} catch (e) {
++  // Ignore the error if the component is not found
++}
+ 
+-export default ((requireNativeComponent(
+-  'RNDateTimePicker',
+-): any): RCTDateTimePickerNative);
++export default RNDateTimePicker;
