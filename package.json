@@ -17,7 +17,7 @@
     "lint": "eslint \"src/**/*.{js, json}\"",
     "transpile": "npm run compile && cp src/basic/Icon/selection.json dist/src/basic/Icon/selection.json && cp src/basic/Icon/NBIcons.json dist/src/basic/Icon",
     "prepublish": "npm run transpile",
-    "postinstall": "node addEjectScript.js && opencollective-postinstall",
+    "postinstall": "node addEjectScript.js && opencollective-postinstall && patch-package",
     "flow": "flow"
   },
   "jest": {
@@ -43,6 +43,7 @@
     "lodash": "^4.17.14",
     "native-base-shoutem-theme": "0.3.1",
     "opencollective-postinstall": "^2.0.2",
+    "patch-package": "^8.0.0",
     "print-message": "^2.1.0",
     "prop-types": "^15.5.10",
     "react-native-drawer": "2.5.1",
@@ -76,7 +77,6 @@
   "homepage": "https://github.com/GeekyAnts/NativeBase#readme",
   "main": "dist/src/index.js",
   "typings": "./index.d.ts",
-  "optionalDependencies": {},
   "peerDependencies": {
     "react": ">=16.4.1",
     "react-native": ">=0.56.0"
